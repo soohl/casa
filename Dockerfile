@@ -7,6 +7,5 @@ WORKDIR /casa
 COPY pyproject.toml pyproject.toml
 
 RUN pip3 install poetry
-RUN poetry install --no-ansi
 
 COPY . .
