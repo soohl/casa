@@ -15,7 +15,6 @@ class ListNode:
 # Output = 1->1->2->3->4->4
 
 ############ Initial Answer O(n) ########
-############ Initial Answer O(n) ########
 result = ListNode()
 head = result
 
