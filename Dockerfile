@@ -4,8 +4,8 @@ FROM python:3
 
 WORKDIR /casa 
 
-COPY pyproject.toml pyproject.toml
+COPY requirements.txt requirements.txt
 
-RUN pip3 install poetry
+RUN pip3 install -r requirements.txt 
 
 COPY . .

@@ -9,7 +9,6 @@
 
 ## Usage
 ```
-poetry instll
-poetry run python xxx.py
-poetry run black .
+make install
+make clean
 ```
