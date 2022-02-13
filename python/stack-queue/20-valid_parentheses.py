@@ -12,7 +12,7 @@ Notes:
 #
 
 s = "()[]{}"
-############ Initial Answer O(n) ########
+############ Using a stack O(n) ########
 stack = []
 
 key = [")", "}", "]"]
