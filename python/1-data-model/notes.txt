@@ -1,0 +1,14 @@
+
+Special method when we want our object to support and interact with fundamental language constructs: 
+"""
+For example, collections[key] is actually collections.__getitem__(key) 
+"""
+* Collections
+* Attribute access
+* Iteration
+* Operator overloading
+* Function and method invocation
+* String representation and formatting
+* Async programming using await
+* Object creation and destruction
+* Managed context using the with or async with statements

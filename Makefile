@@ -16,8 +16,8 @@ install: venv
 lock: venv
 	${PIP} freeze > requirements.lock
 
-ignore : 
-	touch .gitignore
+format: install
+	${PYTHON} -m black python/
 
 run:
 	${PYTHON} ${TARGET}
