@@ -1,8 +1,7 @@
 
 Special method when we want our object to support and interact with fundamental language constructs: 
-"""
+
 For example, collections[key] is actually collections.__getitem__(key) 
-"""
 * Collections
 * Attribute access
 * Iteration
@@ -12,3 +11,9 @@ For example, collections[key] is actually collections.__getitem__(key)
 * Async programming using await
 * Object creation and destruction
 * Managed context using the with or async with statements
+
+These __XX__() functions are often called special method or magic method
+
+len() is not a special method since len() on built-in type is implemented directly 
+by C backend for efficient operation. We can still implment __len__() to make len
+work on custom objects 
