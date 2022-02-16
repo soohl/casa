@@ -17,7 +17,7 @@ class FrenchDeck:
 
     def __getitem__(self, position):
         """
-        special method for:
+        special method that will allow:
         * indexing
         * slicing
         * random.choice()
@@ -35,7 +35,20 @@ def spades_high(card):
     return rank_value * len(suit_values) + suit_values[card.suit]
 
 
+# Object creation
 beer_card = Card("7", "diamonds")
 deck = FrenchDeck()
+
+# Slicing is supported
+deck2 = deck[:5]
+
+# Iterable is supported
+for card in deck:
+    print(card)
+
+# no __contains__ method, but implicitly supported with sequential scan
+print(Card("Q", "hearts") in deck)
+
+# Sorting is supported by key
 for card in sorted(deck, key=spades_high):
     print(card)
