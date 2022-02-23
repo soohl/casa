@@ -1,0 +1,5 @@
+go run hello.go
+go build hello.go
+go build -o ./build/<bin_name> hello.go
+
+go fmt hello.go
