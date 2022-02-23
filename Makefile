@@ -13,7 +13,7 @@ install: venv
 	touch requirements.txt
 	${PIP} install -r requirements.txt
 
-lock: venv
+lock: venv install
 	${PIP} freeze > requirements.lock
 
 format: install

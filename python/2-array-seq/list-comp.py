@@ -86,38 +86,42 @@ set1 = {*range(4), 4, *(5, 6, 7)}  # Use * to define set
 board = [[] * 3 for i in range(3)]
 
 # Use array.array when a list contains numbers only.
-# and want efficient, fast array operation 
+# and want efficient, fast array operation
 from array import array
 from random import random
-floats = array('d',(random() for i in range(10**7)))
-fp = open('floats.bin', 'wb')
+
+floats = array("d", (random() for i in range(10**7)))
+fp = open("floats.bin", "wb")
 floats.tofile(fp)
 fp.close()
-floats2 = array('d')
-fp = open('floats.bin', 'rb')
+floats2 = array("d")
+fp = open("floats.bin", "rb")
 floats2.fromfile(fp, 10**7)
 fp.close()
 
 # memoryview class is a shared memory sequence type
 from array import array
-octets = array('B', range(6))
-m1 = memoryview(octets)
-m1.tolist() # [0,1,2,3,4,5]
-m2 = m1.cast('B', [2,3]) # view 6 bytes memory as 2 * 3 view 
-m2.tolist() #[[0,1,2],[3,4,5]]
-m3 = m1.cast('B', [3,2])
-m3.tolist() #[[0,1],[2,3,],[4,5]]
-m2[1,1] = 22 # octets = array('B', [0,1,2,3,22,5])
 
-# Numpy 
+octets = array("B", range(6))
+m1 = memoryview(octets)
+m1.tolist()  # [0,1,2,3,4,5]
+m2 = m1.cast("B", [2, 3])  # view 6 bytes memory as 2 * 3 view
+m2.tolist()  # [[0,1,2],[3,4,5]]
+m3 = m1.cast("B", [3, 2])
+m3.tolist()  # [[0,1],[2,3,],[4,5]]
+m2[1, 1] = 22  # octets = array('B', [0,1,2,3,22,5])
+
+# Numpy
 import numpy as np
-a = np.arange(12) # a = array([0,1,2,3,4,5,6,7,8,9,10,11])
-a.shape #(12,)
-a.shape = 3,4 # change shape to 3 * 4
-a[:,1] # #grab second column
-a.transpose() # transpose row and col
+
+a = np.arange(12)  # a = array([0,1,2,3,4,5,6,7,8,9,10,11])
+a.shape  # (12,)
+a.shape = 3, 4  # change shape to 3 * 4
+a[:, 1]  # #grab second column
+a.transpose()  # transpose row and col
 
 # collections.deque
 from collections import deque
+
 dq = deque(range(10), maxlen=10)
-dq.rotate(3) #shift right 3 times
+dq.rotate(3)  # shift right 3 times
